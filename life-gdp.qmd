@@ -1,0 +1,20 @@
+---
+title: "Life Expectancy and GDP per Capita"
+---
+
+## Analysis of Life Expectancy vs. GDP per Capita
+
+```{python}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+gapminder = pd.read_csv('gapminder.csv')
+sns.scatterplot(data=gapminder, x='gdp_per_capita', y='life_expectancy', hue='continent')
+plt.title('Life Expectancy vs. GDP per Capita')
+plt.xlabel('GDP per Capita')
+plt.ylabel('Life Expectancy')
+plt.show()
+```
+
+What you see here is that across many contients that the life expectancy tend to curve out in the high pertanges between 80-70% near the 0 to 40000 mark of GDP per Capita. As GDP per Capita increases we only see Asia being depicted and gradually showing a negative trend. 

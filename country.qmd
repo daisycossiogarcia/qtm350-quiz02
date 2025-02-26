@@ -1,0 +1,33 @@
+---
+title: "Country Analysis"
+---
+
+## Analysis for Mexico Over Time
+
+```{python}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+gapminder = pd.read_csv('gapminder.csv')
+mexico_data = gapminder[gapminder['country'] == 'Mexico']
+
+fig, ax1 = plt.subplots(figsize=(10, 6))
+
+ax1.set_xlabel('Year')
+ax1.set_ylabel('GDP per Capita (USD)', color='tab:orange')
+ax1.plot(mexico_data['year'], mexico_data['gdp_per_capita'], color='tab:orange', label='GDP per Capita')
+ax1.tick_params(axis='y', labelcolor='tab:orange')
+
+ax2 = ax1.twinx()  
+ax2.set_ylabel('Life Expectancy (Years) & Population (Millions)', color='tab:blue')
+ax2.plot(mexico_data['year'], mexico_data['life_expectancy'], color='tab:blue', label='Life Expectancy')
+ax2.plot(mexico_data['year'], mexico_data['population_millions'], color='tab:green', label='Population (Millions)')
+ax2.tick_params(axis='y', labelcolor='tab:blue')
+
+fig.suptitle('Mexico: Life Expectancy, GDP per Capita, and Population Over Time')
+fig.legend(loc='upper left', bbox_to_anchor=(0.1, 0.9))
+plt.show()
+```
+
+In Mexico, as the years have increased the GDP per Capita has a general positive trend, worth noting the spike aroun 1980 and the dip around 1988. 
+In Mexico, as the years have increased the life expectancy has a general positive trend but in a more flatten trend compare to the other indicators. As years have increased the population has a stead steep positive trend. 

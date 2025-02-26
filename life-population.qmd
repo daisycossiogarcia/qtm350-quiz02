@@ -1,0 +1,19 @@
+---
+title: "Life Expectancy and Population"
+---
+
+## Analysis of Life Expectancy vs. Population
+
+```{python}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+gapminder = pd.read_csv('gapminder.csv')
+sns.scatterplot(data=gapminder, x='population_millions', y='life_expectancy', hue='continent')
+plt.title('Life Expectancy vs. Population')
+plt.xlabel('Population (millions)')
+plt.ylabel('Life Expectancy')
+plt.show()
+```
+
+What you see here is that regardless of population between 0 to 200 the life expectiancy varies. As population increases beyond 400, only Asia is being depicted and as population increases life esxpectancy is also showing positive growing trend for Asia. 

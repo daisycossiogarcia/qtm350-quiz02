@@ -1,0 +1,13 @@
+---
+title: "Home - Gapminder Analysis"
+---
+
+Hello! This is the home page to the **Gapminder Analysis** website. This dataset tracks population, life expectancy, and GDP per capita in 142 countries from 1952 to 2007. See below for links to the other three site. 
+
+- [Cossio Garcia's- Life Expectancy and GDP per Capita](life-gdp.qmd)
+- [Cossio Garcia's Life Expectancy and Population](life-population.qmd)
+- [Cossio Garcia's Mexico Country Analysis](country.qmd)
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
