@@ -1,18 +1,22 @@
-title: "cossio_garcia-gapminder_data_analysis"
-author: "Daisy Cossio Garcia"
+project:
+  type: website
+
 format:
   html:
     theme: cosmo
+    toc: true
+
 output-dir: docs
+
 website:
+  title: "Gapminder Data Analysis"
   navbar:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Cossio Garcia's- Life Expectancy and GDP per Capita"
+      - text: "Life Expectancy and GDP per Capita"
         href: life-gdp.qmd
-      - text: "Cossio Garcia's Life Expectancy and Population"
+      - text: "Life Expectancy and Population"
         href: life-population.qmd
-      - text: "Cossio Garcia's Mexico Country Analysis"
+      - text: "Country Analysis"
         href: country.qmd
-

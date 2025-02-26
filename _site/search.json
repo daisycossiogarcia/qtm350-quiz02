@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "create-dataset.html",
+    "href": "create-dataset.html",
+    "title": "Create the Gapminder dataset",
+    "section": "",
+    "text": "# Import necessary libraries\nimport pandas as pd\nfrom gapminder import gapminder\n\n# Rename 'lifeExp' to 'life_expectancy' and 'gdpPercap' to 'gdp_per_capita'\ngapminder = gapminder.rename(columns={'lifeExp': 'life_expectancy',\n                                      'pop': 'population_millions', \n                                      'gdpPercap': 'gdp_per_capita'})\n\n# Convert population to millions\ngapminder['population_millions'] = gapminder['population_millions'] / 1_000_000\n\n# Create a new pandas DataFrame from the modified gapminder data\ngapminder_df = pd.DataFrame(gapminder)\n\n# Save the DataFrame as a CSV file\ngapminder_df.to_csv('gapminder.csv', index=False)\n\n# Print the first 3 rows of the DataFrame\nprint(gapminder_df.head(3))\n\n       country continent  year  life_expectancy  population_millions  \\\n0  Afghanistan      Asia  1952           28.801             8.425333   \n1  Afghanistan      Asia  1957           30.332             9.240934   \n2  Afghanistan      Asia  1962           31.997            10.267083   \n\n   gdp_per_capita  \n0      779.445314  \n1      820.853030  \n2      853.100710"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home - Gapminder Data Analysis",
+    "section": "",
+    "text": "This website explores the Gapminder dataset through various analyses:\n\nLife Expectancy and GDP per Capita\n\nLife Expectancy and Population\n\nCountry Analysis"
+  },
+  {
+    "objectID": "index.html#welcome-to-gapminder-data-analysis",
+    "href": "index.html#welcome-to-gapminder-data-analysis",
+    "title": "Home - Gapminder Data Analysis",
+    "section": "",
+    "text": "This website explores the Gapminder dataset through various analyses:\n\nLife Expectancy and GDP per Capita\n\nLife Expectancy and Population\n\nCountry Analysis"
+  },
+  {
+    "objectID": "country.html",
+    "href": "country.html",
+    "title": "Country Analysis",
+    "section": "",
+    "text": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\ngapminder = pd.read_csv('gapminder.csv')\nmexico_data = gapminder[gapminder['country'] == 'Mexico']\n\nfig, ax1 = plt.subplots(figsize=(10, 6))\n\nax1.set_xlabel('Year')\nax1.set_ylabel('GDP per Capita (USD)', color='tab:orange')\nax1.plot(mexico_data['year'], mexico_data['gdp_per_capita'], color='tab:orange', label='GDP per Capita')\nax1.tick_params(axis='y', labelcolor='tab:orange')\n\nax2 = ax1.twinx()  \nax2.set_ylabel('Life Expectancy (Years) & Population (Millions)', color='tab:blue')\nax2.plot(mexico_data['year'], mexico_data['life_expectancy'], color='tab:blue', label='Life Expectancy')\nax2.plot(mexico_data['year'], mexico_data['population_millions'], color='tab:green', label='Population (Millions)')\nax2.tick_params(axis='y', labelcolor='tab:blue')\n\nfig.suptitle('Mexico: Life Expectancy, GDP per Capita, and Population Over Time')\nfig.legend(loc='upper left', bbox_to_anchor=(0.1, 0.9))\nplt.show()\n\n\n\n\n\n\n\n\nIn Mexico, as the years have increased the GDP per Capita has a general positive trend, worth noting the spike aroun 1980 and the dip around 1988. In Mexico, as the years have increased the life expectancy has a general positive trend but in a more flatten trend compare to the other indicators. As years have increased the population has a stead steep positive trend."
+  },
+  {
+    "objectID": "country.html#analysis-for-mexico-over-time",
+    "href": "country.html#analysis-for-mexico-over-time",
+    "title": "Country Analysis",
+    "section": "",
+    "text": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\ngapminder = pd.read_csv('gapminder.csv')\nmexico_data = gapminder[gapminder['country'] == 'Mexico']\n\nfig, ax1 = plt.subplots(figsize=(10, 6))\n\nax1.set_xlabel('Year')\nax1.set_ylabel('GDP per Capita (USD)', color='tab:orange')\nax1.plot(mexico_data['year'], mexico_data['gdp_per_capita'], color='tab:orange', label='GDP per Capita')\nax1.tick_params(axis='y', labelcolor='tab:orange')\n\nax2 = ax1.twinx()  \nax2.set_ylabel('Life Expectancy (Years) & Population (Millions)', color='tab:blue')\nax2.plot(mexico_data['year'], mexico_data['life_expectancy'], color='tab:blue', label='Life Expectancy')\nax2.plot(mexico_data['year'], mexico_data['population_millions'], color='tab:green', label='Population (Millions)')\nax2.tick_params(axis='y', labelcolor='tab:blue')\n\nfig.suptitle('Mexico: Life Expectancy, GDP per Capita, and Population Over Time')\nfig.legend(loc='upper left', bbox_to_anchor=(0.1, 0.9))\nplt.show()\n\n\n\n\n\n\n\n\nIn Mexico, as the years have increased the GDP per Capita has a general positive trend, worth noting the spike aroun 1980 and the dip around 1988. In Mexico, as the years have increased the life expectancy has a general positive trend but in a more flatten trend compare to the other indicators. As years have increased the population has a stead steep positive trend."
+  },
+  {
+    "objectID": "qtm350-quiz02.html",
+    "href": "qtm350-quiz02.html",
+    "title": "Home - Gapminder Analysis",
+    "section": "",
+    "text": "Hello! This is the home page to the Gapminder Analysis website. This dataset tracks population, life expectancy, and GDP per capita in 142 countries from 1952 to 2007. See below for links to the other three site."
+  },
+  {
+    "objectID": "qtm350-quiz02.html#quarto",
+    "href": "qtm350-quiz02.html#quarto",
+    "title": "Home - Gapminder Analysis",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\ngapminder = pd.read_csv('gapminder.csv')\nsns.scatterplot(data=gapminder, x='gdp_per_capita', y='life_expectancy', hue='continent')\nplt.title('Life Expectancy vs. GDP per Capita')\nplt.xlabel('GDP per Capita')\nplt.ylabel('Life Expectancy')\nplt.show()\n\n\n\n\n\n\n\n\nWhat you see here is that across many contients that the life expectancy tend to curve out in the high pertanges between 80-70% near the 0 to 40000 mark of GDP per Capita. As GDP per Capita increases we only see Asia being depicted and gradually showing a negative trend."
+  },
+  {
+    "objectID": "life-gdp.html#analysis-of-life-expectancy-vs.-gdp-per-capita",
+    "href": "life-gdp.html#analysis-of-life-expectancy-vs.-gdp-per-capita",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\ngapminder = pd.read_csv('gapminder.csv')\nsns.scatterplot(data=gapminder, x='gdp_per_capita', y='life_expectancy', hue='continent')\nplt.title('Life Expectancy vs. GDP per Capita')\nplt.xlabel('GDP per Capita')\nplt.ylabel('Life Expectancy')\nplt.show()\n\n\n\n\n\n\n\n\nWhat you see here is that across many contients that the life expectancy tend to curve out in the high pertanges between 80-70% near the 0 to 40000 mark of GDP per Capita. As GDP per Capita increases we only see Asia being depicted and gradually showing a negative trend."
+  },
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\ngapminder = pd.read_csv('gapminder.csv')\nsns.scatterplot(data=gapminder, x='population_millions', y='life_expectancy', hue='continent')\nplt.title('Life Expectancy vs. Population')\nplt.xlabel('Population (millions)')\nplt.ylabel('Life Expectancy')\nplt.show()\n\n\n\n\n\n\n\n\nWhat you see here is that regardless of population between 0 to 200 the life expectiancy varies. As population increases beyond 400, only Asia is being depicted and as population increases life esxpectancy is also showing positive growing trend for Asia."
+  },
+  {
+    "objectID": "life-population.html#analysis-of-life-expectancy-vs.-population",
+    "href": "life-population.html#analysis-of-life-expectancy-vs.-population",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\ngapminder = pd.read_csv('gapminder.csv')\nsns.scatterplot(data=gapminder, x='population_millions', y='life_expectancy', hue='continent')\nplt.title('Life Expectancy vs. Population')\nplt.xlabel('Population (millions)')\nplt.ylabel('Life Expectancy')\nplt.show()\n\n\n\n\n\n\n\n\nWhat you see here is that regardless of population between 0 to 200 the life expectiancy varies. As population increases beyond 400, only Asia is being depicted and as population increases life esxpectancy is also showing positive growing trend for Asia."
+  }
+]

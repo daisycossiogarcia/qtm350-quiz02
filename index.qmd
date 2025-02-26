@@ -1,0 +1,11 @@
+---
+title: "Home - Gapminder Data Analysis"
+---
+
+## Welcome to Gapminder Data Analysis
+
+This website explores the **Gapminder dataset** through various analyses:
+
+- [Life Expectancy and GDP per Capita](life-gdp.qmd)  
+- [Life Expectancy and Population](life-population.qmd)  
+- [Country Analysis](country.qmd)  
